@@ -1,0 +1,49 @@
+<div class="content container row">
+    <div class="col">
+
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" (click)="CambiarVista()" >
+            <span *ngIf="vistaForm == false" >Crear Usuario</span>
+            <span *ngIf="vistaForm == true">Ocultar</span>
+        </button>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Accion</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Edad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listUsarios">
+            <th scope="row">
+                <button type="button" class="btn btn-primary">Ver</button>
+            </th>
+            <td> {{ item.nombre }} </td>
+            <td> {{ item.apellido }}</td>
+            <td> {{ item.edad }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div *ngIf="vistaForm">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Nombre</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="data.nombre" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Apellido</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="data.apellido" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Edad</label>
+        <input type="number" class="form-control" id="exampleInputPassword1" [(ngModel)]="data.edad" aria-describedby="emailHelp">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="guardarUsuario()">Guardar</button>
+</div>
