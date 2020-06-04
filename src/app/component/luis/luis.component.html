@@ -1,1 +1,28 @@
-<p>luis works!</p>
+
+<div class="d-flex flex-row-reverse bd-highlight">
+    <div class="p-2 bd-highlight">
+        <button type="button" class="btn btn-danger" (click)="crearusuario()">crear usuarios</button>
+    </div>
+    <div class="p-2 bd-highlight">
+        <button type="button" class="btn btn-danger" (click)="ocultarusuario()">ocultar usuarios</button>
+    </div>
+  </div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">nombre</th>
+        <th scope="col">apellido</th>
+        <th scope="col">edad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listUsuari">
+        <td>{{ item.nombre }} </td>
+        <td>{{item.apellido}}</td>
+        <td>{{item.edad}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="btnvisable">
+      hola
+  </div>
